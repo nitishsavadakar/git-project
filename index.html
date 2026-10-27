@@ -146,12 +146,31 @@
     @media (max-width: 520px) {
       .card { padding: 40px 24px; }
     }
+    /* Menu at the top (same as style.css) */
+    nav {
+      position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 6px; padding: 6px; border-radius: 999px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); z-index: 10;
+    }
+    nav a {
+      color: var(--muted); text-decoration: none; font-weight: 700; font-size: 15px;
+      padding: 8px 18px; border-radius: 999px; transition: color .2s, background .2s;
+    }
+    nav a:hover { color: var(--text); background: rgba(255,255,255,0.08); }
+    nav a.active { color: var(--bg); background: linear-gradient(90deg, var(--c), var(--d)); }
   </style>
 </head>
 <body>
   <div class="blob one"></div>
   <div class="blob two"></div>
   <div class="blob three"></div>
+
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
   <main class="card">
     <span class="tag">git commit -m "hello world"</span>
